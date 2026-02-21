@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.0.0" type="file" method="upgrade">
+    <name>RemoveHeights</name>
+    <author>Brian Teeman</author>
+    <authorEmail>brian@teeman.net</authorEmail>
+    <authorUrl>https://brian.teeman.net</authorUrl>
+    <copyright>Copyright Brian Teeman</copyright>
+    <license>GNU GPL v3</license>
+    <version>1.0.0</version>
+    <creationDate>Feb 2026</creationDate>
+    <description><![CDATA[Plugin for TinyMCE and Joomla. Removes height style from TD and TR elements in content.]]></description>
+    <fileset>
+        <files folder="removeheights" target="media/plg_editors_tinymce/js/plugins/removeheights">
+            <file>plugin.js</file>
+            <file>plugin.min.js</file>
+        </files>
+    </fileset>
+    <updateservers>
+        <server type="extension" priority="1" name="Remove Heights">https://raw.githubusercontent.com/brianteeman/remove_heights/main/update/manifest.xml</server>
+    </updateservers>
+</extension>
