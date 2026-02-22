@@ -8,7 +8,7 @@
     <license>GNU GPL v3</license>
     <version>1.0.0</version>
     <creationDate>Feb 2026</creationDate>
-    <description><![CDATA[Plugin for TinyMCE and Joomla. Removes height style from TD and TR elements in content.]]></description>
+    <description><![CDATA[Plugin for TinyMCE and Joomla. Removes height style from TD, TR and TH elements in content.]]></description>
     <fileset>
         <files folder="removeheights" target="media/plg_editors_tinymce/js/plugins/removeheights">
             <file>plugin.js</file>
