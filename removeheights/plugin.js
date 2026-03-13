@@ -23,7 +23,7 @@ tinymce.PluginManager.add('remove_heights', function (editor) {
 
     // Remove height from style attributes
     html = html.replace(
-      /(<t[drh][^>]*?)\sstyle="([^"]*)"/gi,
+      /(<t(?:able|[drh])[^>]*?)\sstyle="([^"]*)"/gi,
       function (match, start, styles) {
         let cleaned = styles.replace(/(^|;)\s*height\s*:\s*[^;]+;?/gi, '$1');
         cleaned = cleaned.replace(/;;+/g, ';').trim().replace(/^;|;$/g, '');
@@ -32,7 +32,7 @@ tinymce.PluginManager.add('remove_heights', function (editor) {
     );
 
     // Remove legacy height HTML attribute
-    html = html.replace(/(<t[drh][^>]*?)\sheight="[^"]*"/gi, '$1');
+    html = html.replace(/(<t(?:able|[drh])[^>]*?)\sheight="[^"]*"/gi, '$1');
 
     return html;
   }
@@ -59,12 +59,16 @@ tinymce.PluginManager.add('remove_heights', function (editor) {
   editor.on('input change SetContent', function () {
     const body = editor.getBody();
     if (!body) return;
-    body.querySelectorAll('td, tr, th').forEach(el => {
+
+    body.querySelectorAll('table, td, tr, th').forEach(el => {
       el.removeAttribute('height');
+
       const styleAttr = el.getAttribute('style');
       if (!styleAttr) return;
+
       let cleaned = styleAttr.replace(/(^|;)\s*height\s*:\s*[^;]+;?/gi, '$1');
       cleaned = cleaned.replace(/;;+/g, ';').trim().replace(/^;|;$/g, '');
+
       if (cleaned) el.setAttribute('style', cleaned);
       else el.removeAttribute('style');
     });
