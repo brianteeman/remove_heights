@@ -4,7 +4,7 @@
 
 **Remove Heights** is a TinyMCE plugin for Joomla that:
 
-* Automatically removes `height` styles from table cells (`<td>`), table rows (`<tr>`), and headers (`<th>`).
+* Automatically removes `height` styles from table (`<table>`) and table cells (`<td>`), table rows (`<tr>`), and headers (`<th>`).
 * Removes legacy `height="..."` HTML attributes.
 * Prevents users from resizing table row heights by dragging in the editor.
 * Works on **new tables, existing tables, and pasted content** (including Word tables).
